@@ -41,10 +41,12 @@ INSTALLED_APPS = [
 
     # my_apps
     "blog",
+    "user",
 
     # third_party
     "rest_framework",
     "django_filters",
+    "rest_framework.authtoken",
 ]
 
 MIDDLEWARE = [
@@ -134,5 +136,5 @@ REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 5,
     'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend', 'rest_framework.filters.SearchFilter'],
-
+    'DEFAULT_AUTHENTICATION_CLASSES': ['rest_framework.authentication.TokenAuthentication'],
 }
